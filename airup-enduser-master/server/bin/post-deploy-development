@@ -1,0 +1,6 @@
+#!/bin/bash
+. ~/.bash_profile
+nvm use v10.16.0
+yarn
+yarn build
+pm2 reload ecosystem.config.js --env development

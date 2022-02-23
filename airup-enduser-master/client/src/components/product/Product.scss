@@ -1,0 +1,273 @@
+@import '../../style/common';
+
+/**
+ * Product component
+ */
+.Product {
+  @include flex-grow;
+  position: relative;
+
+  .header {
+    padding: 26px 30px 0 30px;
+    transition: 0.4s background-color ease;
+
+    .information {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .basic {
+      flex-grow: 1;
+    }
+
+    h2 {
+      flex-grow: 1;
+      margin: 0 0 11px -1px;
+    }
+
+    h5 {
+      flex-grow: 1;
+      margin-bottom: 5px;
+    }
+
+    .Track {
+      margin-top: 6px;
+    }
+
+    .meta {
+      .item {
+        line-break: rem(19px);
+        display: inline-block;
+        margin-right: 38px;
+
+        > * {
+          display: inline-block;
+          vertical-align: top;
+        }
+
+        span {
+          margin-right: 4px;
+
+          &.pipe {
+            display: inline-block;
+            vertical-align: top;
+            height: 15px;
+            border-right: 1px rgba($color-light-grey, 0.5) solid;
+            margin: 0 11px 0 14px;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      a {
+        color: $color-light-blue;
+      }
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      border-top: 1px $color-light-grey solid;
+      margin: 17px 0 0 2px;
+    }
+  }
+
+  .back {
+    display: inline-block;
+    color: $color-light-blue;
+    margin-bottom: 11px;
+    padding-left: 1px;
+
+    > * {
+      vertical-align: top;
+    }
+
+    i {
+      font-size: rem(10px);
+      margin-right: 8px;
+    }
+  }
+
+  .content {
+    padding: 23px 30px 20px 30px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+
+    > div {
+      min-width: 50%;
+      max-width: 50%;
+      width: 100%;
+    }
+
+    &.price-changes {
+      flex-direction: column;
+      padding-top: 10px;
+      > div {
+        min-width: 50%;
+        max-width: 50%;
+        width: 100%;
+        &.Table {
+          max-width: unset;
+        }
+      }
+      .price-change-title {
+        font-weight: bolder;
+        margin-bottom: 20px;
+      }
+    }
+    .description {
+      line-height: rem(23px);
+      a.link {
+        color: $color-light-blue;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .photos {
+      text-align: right;
+      padding: 60px 40px;
+
+      .react-zoom-block {
+        display: flex;
+        align-items: center;
+      }
+      img {
+        float: left;
+      }
+      .Image {
+        min-width: 200px;
+        min-height: 200px;
+      }
+    }
+  }
+
+  .footer {
+    height: 228px;
+    background-color: $color-dark-blue;
+    text-align: center;
+    color: $color-white;
+    padding: 23px 30px 30px 30px;
+
+    h5 {
+      margin-bottom: 45px;
+    }
+  }
+
+  .vendors {
+    max-width: 890px;
+
+    .vendor {
+      display: flex;
+      flex-direction: column;
+      height: 90px;
+      justify-content: center;
+      background-color: $color-light-grey;
+      border-radius: 4px;
+      div.logo {
+        height: 100%;
+      }
+    }
+  }
+
+  .dealer-cell {
+    position: relative;
+    .lowest-price {
+      background-color: $color-red;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      padding: 2px 0;
+      color: $color-white;
+      font-size: 10px;
+      line-height: initial;
+      font-weight: 500;
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+    }
+  }
+
+  .alert-danger{
+    color:red
+  }
+
+  .img-retailer-logo {
+    width: 70px;
+    height: 35px;
+    border-radius: 12%;
+  }
+
+  .retailer-logo {
+    height: 25px;
+  }
+
+  .Table {
+    &.RetailerTable {
+      margin-top: 20px;
+      tbody {
+        td {
+          &.logo-cell {
+            display: flex;
+            align-items: center;
+          }
+          &.price {
+            font-weight: 500;
+            color: black;
+          }
+          height: auto;
+          border-bottom: 1px black solid;
+          padding: 2px 0;
+          vertical-align: middle;
+          > a {
+            color: $color-light-blue;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  #rebateRectangle{
+    border: 2px solid #bbd1dd;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  #rebateRectangle .price{
+    width: 40%;
+    float: left;
+    background-color: #cf2f37;
+    color: #f8e0e1;
+    padding-left: 10px;
+    padding: 20px;
+  }
+
+  #rebateRectangle a{
+    color:#a4bbc8
+  }
+
+  #rebateRectangle .description{
+    float: left;
+    padding-left: 40px;
+  }
+
+  &.tracked {
+    .header {
+      background-color: rgba($color-light-blue, 0.15);
+    }
+  }
+}
+
+.singin-remainder a {
+  text-decoration: underline;
+  color: #6199b8;
+}

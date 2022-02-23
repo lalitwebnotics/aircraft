@@ -1,0 +1,42 @@
+@import '../../style/common';
+
+/**
+ * Products Hangar
+ */
+.Hangar {
+  .Products {
+    .Toggle {
+      width: 45px;
+    }
+
+    .toggle {
+      text-align: right;
+    }
+
+    table {
+      table-layout: fixed;
+    }
+
+    thead {
+      tr:first-child {
+        th {
+          &:first-child {
+            width: 54px;
+          }
+
+          &:last-child {
+            width: 68px;
+          }
+        }
+      }
+    }
+
+    tbody {
+      td {
+        &.toggle {
+          padding-top: 13px;
+        }
+      }
+    }
+  }
+}

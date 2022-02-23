@@ -1,0 +1,87 @@
+@import '../../style/common';
+
+/**
+ * Track component
+ */
+.Track {
+  position: relative;
+  width: 160px;
+
+  i {
+    position: absolute;
+    top: 50%;
+
+    &:first-child {
+      font-size: rem(12px);
+      transform: translate3d(0, -50%, 0);
+      left: 0;
+      color: $color-red;
+    }
+
+    &:last-child {
+      font-size: rem(16px);
+      transform: translate3d(0, calc(-50% - 1px), 0);
+      right: 1px;
+      color: $color-dark-grey;
+    }
+  }
+
+  .untrack-overlay {
+    cursor: pointer;
+    border-radius: 4px;
+    position: absolute;
+    display: none;
+    background-color: $color-white;
+    color: $color-light-blue;
+    padding: 17px 0 19px 0;
+    top: 100%;
+    left: 0;
+    right: 0;
+    transform: translate3d(0, -9px, 0);
+    z-index: 1;
+  }
+
+  &.overlay {
+    .untrack-overlay {
+      display: block;
+    }
+  }
+
+  @include device-down(sm) {
+    font-size: rem(16px);
+    line-height: rem(21px);
+
+    .untrack-overlay {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      transform: translate3d(0, 0, 0);
+      border: 1px $color-dark-blue solid;
+      margin: 0 -1px;
+      padding: 13px 0 13px 0;
+      color: $color-dark-blue;
+    }
+
+    &.active {
+      border: 1px $color-dark-blue solid;
+      background-color: $color-white;
+
+      &.overlay {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .Icon {
+        font-size: rem(16px);
+
+        &:first-child {
+          left: 21px;
+        }
+
+        &:last-child {
+          font-size: rem(20px);
+          right: 18px;
+        }
+      }
+    }
+  }
+}

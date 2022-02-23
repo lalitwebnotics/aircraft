@@ -1,0 +1,235 @@
+@import '../../style/common';
+
+/**
+ * Home component
+ */
+.Home {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-top: 140px;
+  position: relative;
+  overflow: hidden;
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .intro {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 35px;
+    margin-bottom: 47px;
+  }
+
+  h1 {
+    font-family: $font-family-bell-mt;
+    font-size: rem(43.8389px);
+    font-weight: $font-weight-regular;
+    line-height: rem(49px);
+    color: $color-dark-blue;
+    margin-bottom: 15px;
+  }
+
+  .main {
+    width: 388px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    transition-property: width;
+    flex-grow: 1;
+    z-index: 10;
+
+    .inputs {
+      margin: 0 -16px 60px -16px;
+    }
+
+    .category-home-input{
+      float:left;
+      width:45%;
+      margin-right:20px
+    }
+
+    .manufacturer-home-input{
+    }
+
+    #categoriesFilterSection{
+      margin-bottom: 25px
+    }
+
+    .home-categories-filters{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .manufacturer-home-input{
+      width: 50%;
+      float: left;
+    }
+
+    .none{
+      display: none;
+    }
+
+    #moreFilterText{
+      text-align:center;
+      margin-bottom: 20px
+    }
+
+    .input {
+      position: relative;
+      padding: 0;
+      width: 0%;
+      min-height: 60px;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
+      transition-property: padding, width;
+      overflow: hidden;
+      float: left;
+
+      .dropdown-items {
+        min-width: 200px;
+      }
+
+      &:first-child {
+        padding: 0 16px;
+        width: 100%;
+        overflow: visible;
+
+        .dropdown-items {
+          min-width: 388px;
+        }
+      }
+
+      &:last-child {
+        .dropdown-items {
+          min-width: auto;
+        }
+      }
+    }
+
+    &.wide {
+      width: 35%;
+
+      .input {
+        padding: 0 16px;
+        width: 33.3333%;
+        overflow: visible;
+      }
+    }
+
+    &.pull {
+      .inputs {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .buttons {
+    margin-bottom: 60px;
+
+    .btn.home-btn {
+      @include ellipsis;
+      width: 60%;
+      float: left;
+      position: relative;
+
+      &:last-child {
+        width: 34.545454%;
+        float: right;
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+
+    .count {
+      position: relative;
+      min-height: 16px;
+      min-width: 16px;
+      vertical-align: bottom;
+
+      .Loader {
+        @include square(16px);
+      }
+    }
+
+    //> :not(div.Popup.Confirm.HangarPopup > *) {
+    //  @include ellipsis;
+    //}
+
+    .left {
+      flex-grow: 1;
+
+      > * {
+        display: inline-block;
+
+        &:first-child {
+          margin-right: 17px;
+        }
+      }
+    }
+  }
+
+  .featured {
+    background-color: $color-dark-blue;
+    padding: 23px 0 38px 0;
+    color: $color-white;
+    text-align: center;
+
+    h5 {
+      margin-bottom: 27px;
+    }
+
+    .Container {
+      width: 896px;
+    }
+
+    .Advertisement {
+      min-height: 164px;
+    }
+  }
+
+  video {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0);
+    transition: 0.2s opacity ease;
+  }
+
+  &.ready {
+    video {
+      opacity: 0.5;
+    }
+  }
+
+  @include device-down(sm) {
+    .intro,
+    .main {
+      width: 100%;
+      padding-left: $grid-gutter-half;
+      padding-right: $grid-gutter-half;
+    }
+
+    .featured {
+      padding: 0 $grid-gutter-half;
+
+      .Container {
+        width: 100%;
+      }
+
+      .col-6 {
+        width: 100%;
+        margin-bottom: $grid-gutter-half;
+      }
+    }
+  }
+}

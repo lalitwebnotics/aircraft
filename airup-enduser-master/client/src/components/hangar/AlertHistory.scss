@@ -1,0 +1,183 @@
+@import '../../style/common';
+
+/**
+ * Alert History
+ */
+.Hangar {
+  .AlertHistory {
+    .Slider {
+      &.products {
+        user-select: none;
+        padding: 12px 30px 30px 30px;
+
+        .slider-item {
+          width: 250px;
+          height: 220px;
+          border: 2px $color-blue solid;
+          border-radius: 4px;
+        }
+
+        .slider-prev,
+        .slider-next {
+          background-color: $color-white;
+        }
+
+        a {
+          display: inline-block;
+          padding: 26px 30px 20px 30px;
+          width: 100%;
+          height: 100%;
+        }
+
+        .Image {
+          width: 100%;
+          height: 110px;
+          margin-bottom: 18px;
+        }
+
+        h5,
+        h6 {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+        h5 {
+          margin-bottom: 6px;
+        }
+      }
+    }
+
+    table {
+      table-layout: fixed;
+    }
+
+    td {
+      &.setting {
+        text-align: right;
+      }
+    }
+
+    thead {
+      tr:first-child {
+        th {
+          &:first-child {
+            width: auto;
+          }
+
+          &:last-child {
+            width: auto;
+          }
+        }
+      }
+    }
+
+    tbody {
+      .setting {
+        .action {
+          i {
+            font-size: rem(20px);
+            line-height: rem(20px);
+            vertical-align: top;
+            margin-left: 13px;
+            margin-top: 1px;
+          }
+        }
+      }
+
+      .products {
+        .action {
+          display: inline-block;
+
+          > span {
+            display: inline-block;
+            vertical-align: top;
+          }
+
+          .badge {
+            margin-right: 10px;
+          }
+
+          &.with-badge {
+            padding-right: 16px;
+            border-radius: 4px;
+          }
+        }
+      }
+
+      .badge {
+        display: inline-block;
+        text-transform: uppercase;
+        background-color: $color-red;
+        border-radius: 4px;
+        color: $color-white;
+        font-size: rem(12px);
+        line-height: rem(14px);
+        padding: 4px 8px 2px 6px;
+      }
+
+      td {
+        &.delete {
+          padding-left: 23px;
+        }
+        &:last-child {
+          text-align: left;
+          padding: 8px 0;
+          padding-top: 12px;
+        }
+      }
+
+      tr {
+        &.open {
+          & + tr {
+            background-color: $color-white;
+          }
+
+          &.odd + .related {
+            background-color: $color-faint-blue;
+          }
+
+          &.selected + .related {
+            background-color: $color-faded-yellow;
+          }
+
+          td {
+            border-bottom-color: transparent;
+
+            &.products {
+              .action {
+                background-color: $color-accent-blue;
+              }
+            }
+          }
+        }
+
+        &.related {
+          td {
+            padding: 0;
+          }
+        }
+
+        &.odd {
+          + .related {
+            .Slider.products {
+              .slider-prev,
+              .slider-next {
+                background-color: $color-faint-blue;
+              }
+            }
+          }
+
+          &.selected + .related {
+            .Slider.products {
+              .slider-prev,
+              .slider-next {
+                background-color: $color-faded-yellow;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

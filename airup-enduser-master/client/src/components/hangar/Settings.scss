@@ -1,0 +1,153 @@
+@import '../../style/common';
+
+/**
+ * Hangar Settings popup
+ */
+.HangarSettings {
+  .popup-content {
+    width: 470px;
+    min-height: 200px;
+    padding: 38px 48px 36px 45px;
+    text-align: left;
+    position: relative;
+  }
+
+  .row {
+    @include clearfix;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .Checkbox {
+    font-size: inherit;
+    line-height: inherit;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .frequency {
+    display: flex;
+    flex-direction: row;
+    font-size: rem(12px);
+    line-height: rem(14px);
+    padding-bottom: 24px;
+    border-bottom: 1px $color-lighter-grey solid;
+
+    label {
+      flex-grow: 1;
+
+      > * {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      span {
+        margin-right: 6px;
+      }
+    }
+
+    .change {
+      display: inline-block;
+      cursor: pointer;
+      color: $color-light-blue;
+    }
+
+    .selector-overlay {
+      top: -10px;
+      right: -20px;
+    }
+  }
+
+  .products {
+    font-size: rem(12px);
+    line-height: rem(14px);
+    padding: 24px 0 10px 0;
+    border-bottom: 1px $color-lighter-grey solid;
+
+    label {
+      display: block;
+      margin-bottom: 15px;
+    }
+  }
+
+  .categories {
+    font-size: rem(12px);
+    line-height: rem(14px);
+    padding: 28px 0 20px 0;
+
+    .category {
+      margin-bottom: 10px;
+    }
+
+    .name {
+      flex-grow: 1;
+    }
+
+    .rebate {
+      width: 76px;
+      text-align: right;
+    }
+
+    .more {
+      flex-direction: column;
+
+      span {
+        font-weight: $font-weight-bold;
+        display: inline-block;
+        padding-top: 17px;
+        padding-bottom: 14px;
+        cursor: pointer;
+        color: $color-light-blue;
+        margin-left: -1px;
+      }
+    }
+
+    .head {
+      margin-bottom: 16px;
+
+      .price,
+      .rebate {
+        font-size: rem(10px);
+        line-height: rem(12px);
+        padding-top: 2px;
+      }
+    }
+
+    .AutoComplete {
+      width: 100%;
+      padding-top: 1px;
+    }
+
+    .Toggle {
+      width: 50px;
+      margin-top: -3px;
+    }
+  }
+
+  .messages {
+    font-size: rem(12px);
+    line-height: rem(14px);
+    margin-bottom: 16px;
+
+    &.error {
+      color: $color-red;
+    }
+  }
+
+  .buttons {
+    .save {
+      float: left;
+      width: 145px;
+    }
+
+    .cancel {
+      float: right;
+    }
+
+    .btn-empty {
+      color: $color-light-blue;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

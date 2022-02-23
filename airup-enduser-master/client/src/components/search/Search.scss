@@ -1,0 +1,244 @@
+@import '../../style/common';
+
+/**
+ * Search component
+ */
+.Search {
+  @include flex-grow;
+
+  .header {
+    padding: 30px 30px 0 30px;
+
+    .Advertisement {
+      height: 123px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .custom-switch {
+    display: flex;
+    align-items: center;
+    .switch-button {
+      position: relative;
+      display: inline-block;
+      width: 45px;
+      height: 25.5px;
+    }
+
+    .switch-button input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider-button {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider-button:before {
+      position: absolute;
+      content: "";
+      height: 19.5px;
+      width: 19.5px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider-button {
+      background-color: #8FD88D;
+    }
+
+    input:focus + .slider-button {
+      box-shadow: 0 0 1px #8FD88D;
+    }
+
+    input:checked + .slider-button:before {
+      -webkit-transform: translateX(19.5px);
+      -ms-transform: translateX(19.5px);
+      transform: translateX(19.5px);
+    }
+
+    /* Rounded slider-buttons */
+    .slider-button.round {
+      border-radius: 25.5px;
+    }
+
+    .slider-button.round:before {
+      border-radius: 50%;
+    }
+  }
+
+  .Breadcrumbs {
+    float: left;
+    display: flex;
+    align-items: center;
+  }
+
+  .add-to-hangar {
+    float: right;
+    cursor: pointer;
+    padding: 15px 0;
+    transition: 0.2s opacity ease;
+    user-select: none;
+
+    &.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
+  .Table {
+    thead {
+      tr:first-child {
+        th {
+          &:first-child {
+            padding-left: 30px;
+            width: 54px;
+          }
+
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+
+      .track-multiple {
+        padding: 4px 24px;
+        height: 30px;
+        margin-left: 120px;
+        font-size: rem(14px);
+      }
+
+      .untrack-multiple {
+        display: inline-block;
+        padding: 4px 0;
+        cursor: pointer;
+        margin-right: 30px;
+        transition: 0.2s opacity ease;
+
+        &.disabled {
+          pointer-events: none;
+          cursor: not-allowed;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    tbody {
+      td {
+        > a {
+          color: $color-light-blue;
+        }
+
+        &:first-child {
+          padding-left: 30px;
+        }
+
+        &:last-child {
+          text-align: right;
+          padding-right: 30px;
+          padding-top: 5px;
+        }
+      }
+    }
+  }
+
+  @include device-down(sm) {
+    .header {
+      display: none;
+    }
+
+    .Table {
+      thead {
+        tr:last-child {
+          th {
+            border-bottom: 0;
+
+            &:first-child {
+              padding-left: 21px;
+              width: 57px;
+            }
+          }
+        }
+      }
+
+      tbody {
+        td {
+          &:first-child {
+            padding-left: 21px;
+            padding-top: 26px;
+          }
+
+          &:nth-child(2) {
+            text-align: left;
+            padding-top: 24px;
+            padding-bottom: 31px;
+            font-size: rem(16px);
+            line-height: 21px;
+
+            > * {
+              font-size: rem(16px);
+              line-height: 21px;
+              display: inline-block;
+
+              &:first-child {
+                font-size: rem(18px);
+                line-height: rem(24px);
+              }
+            }
+
+            .link-product {
+              margin-bottom: 13px;
+            }
+
+            .link-manufacturer {
+              margin-bottom: 14px;
+            }
+
+            .text-last-approved {
+              margin-bottom: 25px;
+            }
+
+            .Track {
+              width: 261px;
+              height: 46px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.tag-block {
+  height: 25px;
+  width: 76px;
+  border-radius: 10px;
+  border: 2px solid #BCD4E1;
+  padding: 2px 5px;
+  display: flex;
+  justify-content: space-between;
+  span.close-tag {
+    line-height: 13px;
+  }
+}
+
+.stc-no-match {
+  color: #FE9A61;
+}

@@ -1,0 +1,68 @@
+{
+  "name": "aircraft-upgrade-www",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^4.7.3",
+    "axios": "^0.19.0",
+    "bootstrap": "^4.5.3",
+    "clsx": "^1.0.4",
+    "connected-react-router": "^6.5.2",
+    "jquery": "^3.5.1",
+    "js-cookie": "^2.2.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "nocache": "^2.1.0",
+    "node-sass": "^4.14.0",
+    "normalize.css": "^8.0.1",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.4.0",
+    "react-datepicker": "^2.14.1",
+    "react-dom": "^16.8.6",
+    "react-dropzone-component": "^3.2.0",
+    "react-dropzone-uploader": "^2.11.0",
+    "react-image-zoom": "^1.3.1",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.4.0",
+    "react-select": "^3.1.0",
+    "react-select-2": "^2.0.11",
+    "react-select-search": "^1.0.2",
+    "redux": "^4.0.4",
+    "redux-actions": "^2.6.5",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^1.0.5",
+    "sass": "^1.49.8",
+    "swiper": "^4.5.0",
+    "yarn": "^1.22.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "eslint": "eslint src",
+    "stylelint": "stylelint 'src/**/*.scss'",
+    "lint": "yarn eslint && yarn stylelint"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "stylelint": "^11.0.0",
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-scss": "^3.11.0"
+  }
+}

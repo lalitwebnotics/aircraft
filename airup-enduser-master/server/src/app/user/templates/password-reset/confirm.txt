@@ -1,0 +1,6 @@
+Hello {{name}},
+
+You have successfully reset your password.
+You may now login at {{link}} with your new credentials.
+
+Aircraft Upgrade

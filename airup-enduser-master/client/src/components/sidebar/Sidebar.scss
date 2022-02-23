@@ -1,0 +1,253 @@
+@import '../../style/common';
+
+/**
+ * Sidebar component
+ */
+.Sidebar {
+  @include flex-grow;
+  min-width: 311px;
+  max-width: 311px;
+  padding: 30px 31px 30px 30px;
+
+  .keyword {
+    margin-bottom: 15px;
+
+    .toggle {
+      display: none;
+    }
+  }
+
+  .Accordion {
+    flex-grow: 1;
+  }
+
+  .accordion-content {
+    padding: 15px 0 12px 0;
+
+    &::before {
+      content: '';
+      display: block;
+      border-top: 1px $color-light-grey solid;
+      margin-bottom: 30px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: block;
+      list-style: none;
+    }
+
+    .subcontent {
+      display: none;
+      padding: 20px 0 5px 32px;
+    }
+
+    .subcontent-item {
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      > a {
+        color: $color-light-blue;
+      }
+
+      .item-header {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .item-content {
+        padding: 10px 0 0 60px;
+      }
+
+      .sub-item {
+        display: flex;
+        flex-direction: row;
+        padding: 10px 0;
+
+        > span {
+          cursor: pointer;
+        }
+      }
+
+      .Selector {
+        flex-grow: 1;
+        text-align: right;
+        font-size: rem(16px);
+        padding-right: 1px;
+        padding-left: 10px;
+
+        .selector-overlay {
+          right: -40px;
+          top: -10px;
+          max-width: 300px;
+          min-width: 300px;
+          max-height: 400px;
+          min-height: 56px;
+        }
+      }
+    }
+
+    .Radio {
+      display: flex;
+      flex-direction: row;
+
+      .caption {
+        flex-grow: 1;
+        padding-left: 14px;
+      }
+
+      &.checked + .subcontent {
+        display: block;
+      }
+    }
+  }
+
+  .item {
+    &-aircraft {
+      .accordion-content {
+        > ul > li {
+          margin-bottom: 21px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .item {
+    &-manufacturer  {
+      .accordion-content {
+        > ul > li {
+          margin-bottom: 21px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .advertisements {
+    padding-top: 30px;
+
+    &.grow {
+      flex-direction: column;
+      flex-grow: 1;
+      padding-top: 0;
+
+      .Advertisement:first-child {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  .Advertisement {
+    height: 200px;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .certificateCheckbox{
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  @include device-down(sm) {
+    flex-grow: 0;
+    min-width: auto;
+    max-width: none;
+    padding: 0;
+    position: relative;
+
+    .keyword {
+      display: flex;
+      flex-direction: row;
+      padding: 9px 13px 27px 21px;
+      margin: 0;
+      position: relative;
+      background-color: $color-dark-blue;
+      z-index: 3;
+
+      input {
+        font-size: rem(16px);
+        line-height: rem(21px);
+      }
+
+      .Text {
+        background-color: $color-white;
+        flex-grow: 1;
+        border-radius: 4px 0 0 4px;
+        border-right: 0;
+
+        > .Icon {
+          margin-left: 18px;
+        }
+
+        input {
+          margin-left: 17px;
+        }
+      }
+
+      .toggle {
+        display: inline-block;
+        min-width: 43px;
+        height: 41px;
+        color: $color-white;
+        background-color: $color-light-blue;
+        border: 1px $color-dark-grey solid;
+        border-left: 0;
+        border-radius: 0 4px 4px 0;
+        text-align: center;
+        font-size: rem(20px);
+        line-height: rem(20px);
+        padding-top: 11px;
+        padding-left: 3px;
+        margin-left: 1px;
+        cursor: pointer;
+      }
+    }
+
+    .filters {
+      padding: 16px 30px 30px;
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      top: 77px;
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+      transition-duration: 0.4s;
+      transition-property: opacity, transform;
+      transition-timing-function: ease;
+      background-color: $color-white;
+    }
+
+    .advertisements {
+      display: none;
+
+      &.grow {
+        display: none;
+      }
+    }
+
+    &.active {
+      .filters {
+        opacity: 1;
+        transform: translate3d(0, 0%, 0);
+      }
+    }
+  }
+}

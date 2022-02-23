@@ -1,0 +1,14 @@
+@import '../../style/common';
+
+/**
+ * Advertisement component
+ */
+.Advertisement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $color-light-grey;
+  color: $color-white;
+  border-radius: 4px;
+  text-align: center;
+}

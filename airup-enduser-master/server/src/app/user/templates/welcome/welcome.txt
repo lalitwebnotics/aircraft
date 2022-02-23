@@ -1,0 +1,6 @@
+Greetings {{name}},
+
+Welcome to Aircraft Upgrade! We're glad to have you on board.
+Thank you for joining us.
+
+Aircraft Upgrade

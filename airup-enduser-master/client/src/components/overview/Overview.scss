@@ -1,0 +1,56 @@
+@import '../../style/common';
+
+/**
+ * Overview component
+ */
+.Overview {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  padding-top: 70px;
+
+  .main {
+    @include flex-grow;
+    border-left: 1px $color-light-grey solid;
+
+    > .overlay {
+      display: none;
+    }
+  }
+
+  @include device-down(sm) {
+    flex-direction: column;
+
+    .main {
+      border: 0;
+      position: relative;
+      overflow: hidden;
+
+      > .overlay {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: rgba($color-black, 0.2);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0;
+        transition-duration: 0.4s;
+        transition-property: opacity, transform;
+        transition-timing-function: ease;
+        transform: translate3d(0, 100%, 0);
+      }
+
+      &.disabled {
+        position: relative;
+
+        > .overlay {
+          opacity: 1;
+          transform: translate3d(0, 0%, 0);
+        }
+      }
+    }
+  }
+}

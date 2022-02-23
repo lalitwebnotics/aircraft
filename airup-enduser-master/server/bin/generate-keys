@@ -1,0 +1,8 @@
+#!/bin/bash
+. ~/.bash_profile
+mkdir -p ./keys/
+rm -f ./keys/jwt.key
+rm -f ./keys/jwt.pub
+ssh-keygen -t rsa -b 4096 -m PEM -f ./keys/jwt.key -q -N ""
+openssl rsa -in ./keys/jwt.key -pubout -outform PEM -out ./keys/jwt.pub
+rm ./keys/jwt.key.pub

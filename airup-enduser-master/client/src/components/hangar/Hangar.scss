@@ -1,0 +1,69 @@
+@import '../../style/common';
+
+/**
+ * Hangar component
+ */
+.Hangar {
+  @include flex-grow;
+
+  .header {
+    padding: 18px 30px 0 30px;
+
+    h2 {
+      margin-bottom: 26px;
+    }
+  }
+
+  .description {
+    padding: 27px 30px 29px 29px;
+  }
+
+  .Table {
+    thead {
+      tr:first-child {
+        th:first-child {
+          padding-left: 30px;
+        }
+      }
+    }
+
+    tbody {
+      td {
+        > a {
+          color: $color-light-blue;
+        }
+
+        &:first-child {
+          padding-left: 30px;
+        }
+
+        &:last-child {
+          text-align: right;
+          padding-right: 30px;
+          padding-top: 5px;
+        }
+
+        &.delete {
+          text-align: right;
+          padding-left: 20px;
+          width: 16px;
+          padding-top: 13px;
+
+          i {
+            color: $color-dark-blue;
+            font-size: rem(16px);
+            line-height: rem(16px);
+            vertical-align: top;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .action {
+        cursor: pointer;
+        color: $color-light-blue;
+        user-select: none;
+      }
+    }
+  }
+}

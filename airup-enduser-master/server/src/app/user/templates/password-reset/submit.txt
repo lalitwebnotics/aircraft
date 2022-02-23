@@ -1,0 +1,10 @@
+Hello {{name}},
+
+You have requested for your password to be reset.
+Please follow the link below to change your password.
+
+{{link}}
+
+If you did not initiate this request, please ignore this email.
+
+Aircraft Upgrade

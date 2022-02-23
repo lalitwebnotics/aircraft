@@ -1,0 +1,142 @@
+@import '../../style/common';
+
+/**
+ * Hangar popup
+ */
+.Popup.HangarPopup {
+  .popup-content {
+    padding-left: 56px;
+    padding-right: 56px;
+
+    p {
+      margin-bottom: 34px;
+    }
+  }
+  .hanger-input-col {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    .input {
+      width: 100%;
+      margin-bottom: 20px;
+      .input-label {
+        font-size: 11px;
+        color: $color-shady-lady;
+      }
+      img {
+        height: 150px;
+        margin: 0 auto 5px;
+      }
+      input {
+        width: 100%;
+        padding: 14px;
+        text-align: center;
+        background-color: $color-athens-gray;
+        color: $color-abbey;
+        box-shadow: inset 0 0 10px 0 $color-porcelain;
+        border: none;
+        font-size: 13px;
+        font-weight: 500;
+        border-radius: 3px;
+        &[type=file] {
+          text-align: left;
+          background-color: transparent;
+          box-shadow: none;
+          padding: 0;
+          overflow: auto;
+        }
+      }
+      #aircraft-image {
+        display: none
+      }
+      .file-btns {
+        width: 100%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        label {
+          padding: 5px 15px;
+          border-radius: 3px;
+          background-color: $color-athens-gray-2;
+          border: 0.5px solid $color-bon-jour;
+          cursor: pointer;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+  .hanger-input-row {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    .input {
+      padding: 0 5px;
+      width: 33.3333%;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+      .Dropdown.dropdown-make,.Dropdown.dropdown-model,.Dropdown.dropdown-year {
+        .dropdown-select {
+          border-bottom: none;
+          background-color: rgba($color-dark-blue, 0.05);
+          border-radius: 5px;
+          padding-right: 5px;
+          padding-left: 5px;
+        }
+        .dropdown-items {
+          box-shadow: 0px 0px 5px 5px rgba($color-dark-blue, 0.05);
+        }
+      }
+      .Dropdown.dropdown-make {
+        .dropdown-items {
+          min-width: 300px;
+          width: auto;
+        }
+      }
+      .Dropdown.dropdown-model {
+        .dropdown-items {
+          min-width: 160px;
+          width: auto
+        }
+      }
+      .Dropdown.dropdown-year {
+        .dropdown-items {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .selected-aircraft {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba($color-dark-blue, 0.02);
+    border-radius: 4px;
+    padding: 8px 19px 9px 17px;
+    margin-bottom: 20px;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    transition-property: background-color, color;
+
+    span {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    a {
+      color: $color-blue;
+    }
+
+    .Icon {
+      font-size: rem(16px);
+    }
+
+    &.added {
+      background-color: $color-green;
+      color: $color-white;
+    }
+  }
+}
